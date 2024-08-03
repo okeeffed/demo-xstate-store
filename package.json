@@ -1,0 +1,19 @@
+{
+  "name": "demo-xstate-store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@statelyai/inspect": "^0.4.0",
+    "@xstate/store": "^2.0.0",
+    "effect": "^3.6.0",
+    "immer": "^10.1.1",
+    "xstate": "^5.17.1"
+  }
+}
