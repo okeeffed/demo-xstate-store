@@ -1,5 +1,6 @@
 import { setup, assign, createActor, ActorRefFrom } from "xstate";
 import { createBrowserInspector } from "@statelyai/inspect";
+import pc from "picocolors";
 
 const inspector = createBrowserInspector();
 
@@ -161,12 +162,12 @@ function sendEventAndLog(event: JobEvents) {
 }
 
 function simulateScenario(scenarioName: string, events: JobEvents[]) {
-  console.log(`\n--- ${scenarioName} ---`);
+  console.log(pc.yellow(`\n--- ${scenarioName} ---`));
   events.forEach(sendEventAndLog);
 }
 
 function simulateStopAndRestart() {
-  console.log("\n--- Simulating stop and restart ---");
+  console.log(pc.yellow("\n--- Simulating stop and restart ---"));
   actor.stop();
   console.log("Process stopped. Restarting from saved state...");
 
@@ -226,6 +227,6 @@ simulateScenario("Scenario 3: Error during client email", [
 
 simulateStopAndRestart();
 
-console.log("\n--- Final state ---");
+console.log(pc.yellow("\n--- Final state ---"));
 console.log("Current state:", actor.getSnapshot().value);
 console.log("Final context:", actor.getSnapshot().context);
